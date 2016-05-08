@@ -22,7 +22,6 @@ Notes:
 #define MPU9250_WHOAMI                  0x75
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
   I2C* i2c = new I2C(MPU9250_DEFAULT_ADDRESS);
 
@@ -58,4 +57,10 @@ void scan_error(int address) {
 }
 
 ```	
+
+As output you should receive the following:
+
+	I2C device found at address 0x69!
+	MPU9250 I AM 71 I should be 71
+
 	
