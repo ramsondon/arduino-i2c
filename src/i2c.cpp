@@ -2,9 +2,20 @@
 #include "i2c.h"
 #include <Wire.h>
 
+bool I2C::sWireInit = false;
+
 I2C::I2C(uint8_t slave_address)
 {
     mSlave = slave_address;
+    I2C::init();
+}
+
+void I2C::init(void)
+{
+    if (false == sWireInit) {
+        Wire.begin();
+        sWireInit = true;
+    }
 }
 
 uint8_t I2C::read(uint8_t address)

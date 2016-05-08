@@ -11,7 +11,9 @@ class I2C
 {
     private:
         uint8_t mSlave;
-
+        static bool sWireInit;
+        static void init(void);
+        
     public:
       I2C(uint8_t slave_address);
       uint8_t read(uint8_t address);
