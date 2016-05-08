@@ -4,7 +4,7 @@
 #ifndef I2C_H
 #define I2C_H
 
-#include <stdint.h>
+#include <Arduino.h>
 
 typedef int(*i2c_cb_ptr)(int);
 
