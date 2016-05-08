@@ -18,7 +18,11 @@ void setup() {
   Serial.begin(9600);
   I2C* i2c = new I2C(MPU9250_DEFAULT_ADDRESS);
   byte c = i2c->read(MPU9250_WHOAMI);
-  Serial.print("MPU9250 "); Serial.print("I AM "); Serial.print(c, HEX); Serial.print(" I should be "); Serial.println(0x71, HEX);
+  Serial.print("MPU9250 "); 
+  Serial.print("I AM "); 
+  Serial.print(c, HEX); 
+  Serial.print(" I should be "); 
+  Serial.println(0x71, HEX);
 }
 
 void loop() {}
