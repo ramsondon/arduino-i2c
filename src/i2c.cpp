@@ -18,6 +18,11 @@ void I2C::init(void)
     }
 }
 
+void I2C::use(uint8_t slave_address) 
+{
+    mSlaveAddress = slave_address;
+}
+
 uint8_t I2C::read(uint8_t address)
 {
     uint8_t data;                                   // 'data' will store the register data   

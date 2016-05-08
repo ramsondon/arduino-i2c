@@ -36,7 +36,14 @@ class I2C
         /*
          * constructor 
          */
-        I2C(uint8_t slave_address);
+        I2C(uint8_t slave_address = 0);
+        
+        /*
+         * switches the device
+         * 
+         * @param slave_address 
+         */
+        void use(uint8_t slave_address);
         
         /*
          * reads a single byte at address 'address' of device mSlave
