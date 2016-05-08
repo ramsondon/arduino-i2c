@@ -2,7 +2,16 @@ ramsondon i2c library for arduino.
 
 Notes:
 
-	this library has only been tested with an arduino due and a drotek 10DOF breakout board.
+	this library has only been tested with an arduino due and a drotek 10DOF breakout board (MPU9250 and MS5611).
+	for testing purposes the breakout board has been connected directly to the 3.3v output pin of the arduino due.
+
+	10DOF ----> Arduino
+	SDA   ----> SDA (20)
+	SCL   ----> SCL (21)
+	VDD   ----> 3.3v
+	GND   ----> GND
+
+	
 
 
 
