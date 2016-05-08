@@ -6,6 +6,8 @@
 
 #include <stdint.h>
 
+typedef int(*i2c_cb_ptr)(int);
+
 /*
  * class I2C
  * 
@@ -50,6 +52,12 @@ class I2C
          * write data to address of mSlave device
          */
         void write(uint8_t address, uint8_t data);
+        
+        /*
+         * scans the i2c bus
+         * @return number of devices found
+         */
+        int scan(i2c_cb_ptr ptr_success, i2c_cb_ptr ptr_error);
 };
 
 #endif

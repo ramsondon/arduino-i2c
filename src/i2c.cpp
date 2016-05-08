@@ -48,3 +48,27 @@ void I2C::write(uint8_t address, uint8_t data)
     Wire.write(data);                       // Put data in Tx buffer
     Wire.endTransmission();                 // Send the Tx buffer
 }
+
+int I2C::scan(i2c_cb_ptr ptr_success, i2c_cb_ptr ptr_error)
+{
+    byte error, address;
+    int nrOfDevices; 
+    nrOfDevices = 0;
+    
+    for(address = 1; address < 127; address++) {
+        
+        // We use the return value of Wire.endTransmission to see if a device
+        // did acknowledge at a specific address.
+        Wire.beginTransmission(address);
+        error = Wire.endTransmission();
+
+        if (error == 0) {
+            ptr_success(address);
+            nrOfDevices++;
+        } else if (error == 4) {
+            ptr_error(address);
+        }    
+    }
+ 
+    return nrOfDevices;
+}
