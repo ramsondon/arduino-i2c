@@ -1,5 +1,5 @@
 // i2c.cpp
-#include "I2C.h"
+#include "i2c.h"
 #include <Wire.h>
 
 I2C::I2C(uint8_t slave_address)
